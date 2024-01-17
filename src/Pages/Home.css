@@ -1,0 +1,309 @@
+.home {
+    width: 100%;
+    background: url(../images/teacher.png);
+    position: relative;
+    height: 100vh;
+    object-fit: cover;
+    background-position: right;
+    background-attachment: fixed;
+}
+
+.home-sec1 {
+    width: 50%;
+    height: 100%;
+    padding: 0 2%;
+}
+
+.sitename {
+    height: 45%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+    font-size: clamp(60px, 8vw, 90px);
+    color: transparent;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    -webkit-text-stroke-width: 3px;
+    letter-spacing: 3px;
+    overflow-y: hidden;
+    position: relative;
+    animation: riseup 1.5s ease-in 1;
+}
+
+.slogan {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    overflow: hidden;
+    position: relative;
+
+    animation: riseup 2s ease-in 1;
+}
+
+.homepage-btns {
+    width: 96%;
+    height: 30%;
+    border-radius: 20px;
+    background-color: rgba(85, 85, 85, 0.434);
+    backdrop-filter: blur(5px);
+    color: rgb(199, 199, 199);
+    font-weight: 600;
+    border: none;
+    font-size: larger;
+    letter-spacing: 2px;
+    box-shadow: 0px 0px 5px 5px rgb(226, 226, 226);
+
+}
+
+.homepage-btns:hover {
+    color: white;
+}
+
+.btns-area {
+    height: 30%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 2%;
+    position: relative;
+    overflow: hidden;
+    animation: riseup 3s ease-in 1;
+    overflow-y: hidden;
+}
+
+
+
+.home-sec2 {
+    height: 100vh;
+    background-image: url(../images/se2.jpg);
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#blur {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.378);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.title2 {
+    color: rgb(255, 255, 255);
+    font-size: clamp(50px, 8vw, 90px);
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin: 0;
+}
+
+
+#blur>p {
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    font-size: clamp(20px, 5vw, 40px);
+    animation: none;
+}
+
+.listofcolleges {
+    height: 50%;
+    width: 90%;
+    margin: 2% auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: inset 2px 2px 5px transparent;
+}
+
+#clgs {
+    height: fit-content;
+    width: fit-content;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0 1%;
+    perspective: 400px;
+
+}
+#clgs:is(:hover,:focus) .collegecard {
+    transform: rotateY(180deg) scaleX(-1);
+}
+
+.list-container {
+    height: inherit;
+    width: fit-content;
+    animation: slide 20s linear infinite;
+}
+
+.list-container:hover {
+    animation-play-state: paused;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    25%{
+        transform: translateX(50%);
+    }   
+    50%{
+        transform: translateX(0%);
+    } 
+    75%{
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.home-sec3 {
+    width: 100%;
+    height: fit-content;
+    background-attachment: fixed;
+    margin: 0 ;
+    padding:1% 0;
+    backdrop-filter: blur(5px );
+    background-image: url(../images/sec3.jpg);
+    background-position: center;
+    background-size: cover;
+    /* background:linear-gradient(to top right ,grey,rgb(155, 155, 155),rgb(175, 175, 175),rgb(195, 195, 195),rgb(194, 194, 194),rgb(255, 255, 255)) ; */
+}
+/* .sec3-one:nth-child(2n-1)>.sec3-left{
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    text-align: left;
+}
+.sec3-one:nth-child(2n)>.sec3-left{
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    text-align: right;
+} */
+
+.sec3-one {
+    height: 30rem;
+    width: 90%;
+    margin: 0% auto;
+    padding: 2%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.sec3-left {
+    width: 45%;
+    height: 70%;
+    display: grid;
+    font-size: clamp(50px, 6vw, 70px);
+    font-weight: 600;
+    place-items: center ;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+    -webkit-text-stroke-width: 3px;
+  
+}
+@keyframes glow {
+    0%{
+        background-position: 0%;
+
+    }
+    50%{
+        background-position: 400%;
+
+    }
+    100%{
+        background-position: 0%;
+
+    }
+}
+
+.sec3-right {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    font-size: clamp(10px, 3vw, 20px);
+    color: rgb(0, 0, 0);
+    background-color: white;
+    padding:2% 4%;
+    text-align: center;
+    box-sizing: border-box;
+    animation: changestyle 6s ease-in-out infinite;
+}
+@keyframes changestyle {
+    0%{
+        border-radius:20px;
+    box-shadow: inset 0px 0px 120px 15px  rgb(23, 23, 23);
+
+    }
+    25%{
+        border-radius:21% 79% 21% 79% / 79% 20% 80% 21%   ;
+    box-shadow: inset 0px 0px 140px 30px  rgb(23, 23, 23);
+
+    }
+    50%{
+        border-radius:51% 49% 50% 50% / 51% 52% 48% 49%  ;
+    box-shadow: inset 0px 0px 160px 50px  rgb(23, 23, 23);
+
+    }
+    75%{
+        border-radius: 79% 20% 80% 21% /21% 79% 21% 79%  ;
+    box-shadow: inset 0px 0px 140px 30px  rgb(23, 23, 23);
+
+    }
+    100%{
+        border-radius:20px   ;
+    box-shadow: inset 0px 0px 120px 15px  rgb(23, 23, 23);
+
+    }
+}
+
+
+
+@media screen and (max-width:800px) {
+    .home-sec1 {
+        height: 100%;
+        width: 100%;
+        padding: 2%;
+    }
+
+    .btns-area {
+        height: 30%;
+        width: 94%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        gap: 2%;
+    }
+    .sec3-one {
+        flex-direction: column;
+    }
+    .sec3-left {
+        width: 90%;
+        height: 70%;
+       
+    }
+    .sec3-right {
+        width: 90%;
+        height: 100%;
+        padding:2% 12%;
+        
+    }
+    .sec3-one:nth-child(2n){
+        flex-direction: column-reverse;
+       
+    } 
+}
