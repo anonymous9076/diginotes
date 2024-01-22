@@ -1,0 +1,134 @@
+.dashboard {
+    height: 70dvh;
+    width: 100%;
+    background: url(../images/12.png);
+    background-position: center;
+}
+
+.dash-blur {
+    display: grid;
+    grid-template-rows: 60% 20%;
+    place-items: end center;
+}
+
+.dash-title {
+    color: white;
+    font-size: clamp(25px, 8vw, 50px);
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+.dash-drop {
+    height: 100%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    margin: 0 auto;
+}
+
+.drop-area {
+    height: 2.2em;
+    min-width:10em;
+    width: 19em;
+    position: relative;
+    margin: 0 2%;
+    box-sizing: border-box;
+}
+.drop1 {
+    height: 100%;
+    width: 100%;
+    background: #A6A6A6;
+    color: rgb(79, 79, 79);
+    border: none;
+    padding: 0 4%;
+    appearance: none;
+    font-size: clamp(15px, 5vw, 18px);
+    letter-spacing: 1px;
+    box-shadow: 2px 2px 5px rgb(29, 29, 29);
+}
+
+.drop1:is(:hover, :focus) {
+    outline: none;
+}
+
+.drop1:is(:focus) {
+    color: black;
+}
+
+.drop1>option {
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: 200;
+    width: 100%;
+    color: rgb(38, 38, 38);
+}
+
+.drop-btn {
+    position: absolute;
+    height: 100%;
+    width: 15%;
+    background: #A6A6A6;
+    top: 0;
+    display: grid;
+    place-content: center;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    right: 0;
+    pointer-events: none;
+}
+
+.dash-content {
+    width:100%;
+    background-color: #A6A6A6;
+    box-shadow: 0px -15px 10px 10px #A6A6A6;
+}
+.dash-content>p {
+    margin:0 4%;
+    color: rgb(51, 51, 51);
+    font-size: clamp(15px, 5vw, 20px);
+}
+@media screen and (max-width:800px) {
+    .dashboard {
+        height: 25rem;
+        width: 100%;
+        background: url(../images/12.png);
+        background-position: center;
+    }
+    .dash-blur {
+        display: grid;
+        grid-template-rows: 58% 30%;
+        place-items: end center;
+    }
+  
+    .dash-drop {
+        min-width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr ;
+        place-items: center;
+        margin: 0 auto;
+    }
+    .drop-area {
+        height: 2.2em;
+        width: 16.5em;
+        position: relative;
+        margin: 0 4%;
+        box-sizing: border-box;
+    }
+}
+@media screen and (max-width:480px){
+    .dash-title {
+        padding:2% 0;
+    }
+    .dash-blur {
+        display: grid;
+        grid-template-rows: 50% 30%;
+        place-items: end center;
+    }
+}

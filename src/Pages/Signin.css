@@ -1,0 +1,153 @@
+.signin {
+    height: 140dvh;
+    width: 100%;
+    background: url(../images/13.png);
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+
+.signin-blur-cont {
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    display: grid;
+    grid-template-rows: 15% 80%;
+    place-items: center;
+    color: white;
+}
+
+.signin-page {
+    height: 100%;
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.611);
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    padding: 2%;
+    gap: 5%;
+    box-sizing: border-box;
+}
+
+.sign-label {
+    width: fit-content;
+    display: block;
+    font-size: clamp(15px, 5vw, 25px);
+    font-weight: 400;
+    margin: 1% 0;
+}
+
+.sign-input-row {
+    height: 40%;
+    display: block;
+}
+
+.sign-input-sec {
+    height: 100%;
+    min-width: 10rem;
+    width: 85%;
+    border-radius: 10px;
+    border: 3px solid#D9D9D9;
+    background: transparent;
+    margin: 1% 0;
+
+}
+
+.gender-section {
+    display: flex;
+}
+
+.gender-label {
+    font-size: clamp(10px, 5vw, 20px);
+    margin: 0 10%;
+}
+
+.gender-btn {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.sign-btn {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.signb {
+    height: 100%;
+    min-width: 50%;
+    background: transparent;
+    border: 4px solid #D9D9D9;
+    color: white;
+    border-radius: 10px;
+    font-size: clamp(15px, 5vw, 20px);
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width:800px) {
+    .signin {
+        height: 80rem;
+
+    }
+
+    .signin-blur-cont {
+        grid-template-rows: 10% 80%;
+    }
+
+    .signin-page {
+        height: 100%;
+        width: 60%;
+        background-color: rgba(0, 0, 0, 0.611);
+        border-radius: 20px;
+        display: grid;
+        grid-template-rows: repeat(12, 5%);
+        grid-template-columns: 1fr;
+        color: white;
+        padding: 2%;
+        gap: 5%;
+        box-sizing: border-box;
+    }
+
+    .sign-input-row {
+        height: 80%;
+        display: block;
+    }
+
+    .gender-section {
+        display: flex;
+        height: 100%;
+    }
+
+    .disappear {
+        display: none;
+    }
+
+    .sign-btn {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .signin-page {
+        height: 100%;
+        width: 90%;
+        background-color: rgba(0, 0, 0, 0.611);
+        border-radius: 20px;
+        display: grid;
+        grid-template-rows: repeat(12, 5%);
+        grid-template-columns: 1fr;
+        color: white;
+        padding: 4%;
+        gap: 5%;
+        box-sizing: border-box;
+    }
+}

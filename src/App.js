@@ -1,20 +1,29 @@
 import './App.css';
-import Navbar from './Components/Navbar';
 import Home from './Pages/Home'
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Signin from './Pages/Signin'
+import Login from './Pages/Login'
+import Dashboard from './Pages/Dashboard'
+import Upload from './Pages/Upload' 
+import Saved from './Pages/Saved' 
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    
-      <BrowserRouter>
 
-      <Navbar></Navbar>
+    <BrowserRouter>
+
       <Routes>
-      <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/Login' element={<Login />} />
+        <Route path='/Signin' element={<Signin />} />
+        <Route path='/Dashboard' element={<Dashboard/>}></Route>
+        <Route path='/Upload' element={<Upload/>}/>
+        <Route path='/Saved' element={<Saved/>}/>
 
       </Routes>
-      </BrowserRouter>
-    
+    </BrowserRouter>
+
   );
 }
 

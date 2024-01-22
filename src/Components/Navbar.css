@@ -11,57 +11,131 @@
 }
 
 .logo {
-  width: fit-content;
+  width: 30%;
   display: grid;
   position: relative;
-  margin-left: 4%;
-  place-content: center;
-  color:  rgb(255, 255, 255);
-  -webkit-text-stroke-color:rgb(180, 180, 180);
-  -webkit-text-stroke-width: 2px;
+  padding-left: 4%;
+  place-items: calc(2% - 100%);
+  color: rgb(255, 255, 255);
   letter-spacing: 2px;
   text-shadow: 5px 5px 12px rgb(164, 164, 164);
   cursor: pointer;
   overflow-y: hidden;
-  animation: riseup 1s ease-in 1;
+  animation: riseup .5s ease-in 1;
+}
 
+.nav-menu {
+  display: none;
+  height: 100%;
+  width: 50%;
+  font-size: 1.2rem;
 }
 
 .nav-item-list {
-  width: 80%;
+  min-width: 60%;
   display: flex;
   list-style-type: none;
   justify-content: flex-end;
   align-items: center;
-
+  margin: 0 8%;
 }
 
 .nav-item-list>li {
   width: fit-content;
   position: relative;
-  margin: 0 1.5%;
+  margin: 0 2%;
+  box-sizing: border-box;
   height: inherit;
   font-size: 1.2rem;
   font-weight: 400;
-  color: transparent;
-  -webkit-text-stroke-color: rgb(222, 222, 222);
-  -webkit-text-stroke-width: 1px;
+  color: rgba(255, 255, 255, 0.849);
   cursor: pointer;
   text-align: center;
   overflow-y: hidden;
   animation: riseup 1s ease-in 1;
+  transition: all .5s;
 }
+
 .nav-item-list>li:hover {
   -webkit-text-stroke-width: 2px;
-
+  transform: scale(1.1);
+  color: white;
 }
 
 @keyframes riseup {
-  0%{
-    bottom: 100%;
+
+  0% {
+    bottom: -100%;
   }
-  100%{
+
+  100% {
     bottom: 0%;
   }
-  
+
+}
+
+@media screen and (max-width:800px) {
+  .nav {
+    display: block;
+    overflow: unset;
+    box-sizing: unset;
+  }
+
+  .logo {
+    width: 50%;
+    height: inherit;
+    display: inline-flex;
+  }
+
+  .nav-menu {
+    display: grid;
+    place-content: center;
+    width: 20%;
+    float: right;
+    font-size: 2rem;
+    color: white;
+    transition: all .5s;
+  }
+
+  .nav-item-list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: calc(100vh - 5rem );
+    display: block;
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.923);
+    position: relative;
+    left: -100%;
+    transition: left 1s ;
+  }
+  .nav-item-list>li {
+    width: 96%;
+    position: relative;
+    height: 15%;
+    margin: 0;
+    display: grid;
+    place-content: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.849);
+    cursor: pointer;
+    text-align: center;
+    overflow-y: hidden;
+    animation: riseup 1s ease-in 1;
+    transition: all .5s;
+  }
+  .close-menu{
+      display: none;
+  }
+  .active .nav-item-list{
+    left: 0%;
+  }
+  .active .open-menu{
+    display: none;
+  }
+  .active .close-menu{
+    display: block;
+  }
+
 }

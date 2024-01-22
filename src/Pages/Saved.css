@@ -1,0 +1,26 @@
+.saved {
+    height: fit-content;
+    background: url('../images/1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 5rem;
+    box-sizing: border-box;
+}
+.s-head{
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 0;
+    padding-top: 2%;
+    margin: 0;
+}
+.items-container {
+    width: 100%;
+    padding: 3%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    box-sizing: border-box;
+    place-items: center;
+    box-sizing: border-box;
+}
