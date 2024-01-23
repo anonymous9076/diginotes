@@ -22,8 +22,10 @@ input:focus{
     outline: none;
 }
 .green{
+    box-shadow: inset 0px 0px 20px 4px rgb(48, 235, 1);
     border-color: rgb(48, 235, 1) !important;
 }
 .red{
-    border: rgb(255, 0, 0) !important;
+    box-shadow: inset 0px 0px 20px 4px rgb(255, 0, 0);
+    border-color: rgb(255, 0, 0) !important;
 }
