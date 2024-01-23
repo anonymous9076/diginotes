@@ -32,12 +32,24 @@
     width: 32%;
     box-shadow: inset 0px 0px 20px 4px white;
     min-width: 8rem;
-    border-radius: 50%;
     display: grid;
     place-items: center;
+    border-radius: 24% 76% 72% 28% / 15% 36% 64% 85% ;
     color: white;
     text-align: center;
     font-size: clamp(15px, 5vw, 20px);
+    position: relative;
+    transition: all .5s;
+}
+
+.input-upload{
+   opacity: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.upload-area:hover {
+    font-size:clamp(20px, 5vw, 25px); 
 }
 
 .upload-btn-area {
@@ -46,6 +58,7 @@
     display: grid;
     place-items: center;
 }
+
 
 .upload-btn {
     background-color: transparent;
@@ -56,11 +69,13 @@
     color: white;
     font-size: clamp(15px, 5vw, 20px);
     box-shadow: inset 0px 0px 5px  white;
+    transition: all .5s;
 
 }
 
 .upload-btn:hover {
-    transform: scale(1.1);
+    font-size:clamp(20px, 5vw, 25px); 
+
 }
 
 .upload-detail {

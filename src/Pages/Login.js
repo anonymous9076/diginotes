@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 function Login() {
     return (
         <div className='login'>
-            <div className='login-blur-cont'>
+            <div className='login-cont blur'>
                 <h1>Let's !  Get Started</h1>
                 <div className='login-page'>
                     <span className='input-row'>

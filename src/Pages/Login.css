@@ -7,10 +7,8 @@
     place-items: center;
 }
 
-.login-blur-cont {
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(5px);
+.login-cont {
+
     display: grid;
     grid-template-rows: 15% 80%;
     place-items: center;

@@ -8,10 +8,8 @@
     place-items: center;
 }
 
-.signin-blur-cont {
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(5px);
+.signin-cont {
+
     display: grid;
     grid-template-rows: 15% 80%;
     place-items: center;
