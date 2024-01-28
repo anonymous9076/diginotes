@@ -1,36 +1,39 @@
 import React, { useState } from 'react'
 import './Card2.css'
 import { FaSave, FaDownload, FaShareAlt, } from "react-icons/fa";
-import { AiOutlineLike } from "react-icons/ai";
-// import { MdDelete,AiFillLike } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 import { FaRotate } from "react-icons/fa6";
-function Card2() {
-    const [rotate,setRotate]=useState(false)
+
+const  Card2 =(props)=> {
+
+    const [rotate,setRotate]=useState(false);
+   const {degree ,file, pages,subject,book,description}=props
+
     return (
         <div className='card-container'>
             <div className={rotate?'card2 round':'card2'}>
                 <div className='card2-front'>
                    <div className='card-detail'>
-                    <span className='bold'>: BCA sem3 and bba sem4 in one </span>
-                    <span><p id='just'>: English</p></span>
-                    <span>: 456 pgs</span>
+                    <span className='bold'>: {degree} </span>
+                    <span><p id='just'>: {subject}</p></span>
+                    <span>: {pages} pgs</span>
                   
                   
                    </div>
                    <div className='card-icon'>
                     <div><FaSave title='saved'></FaSave></div>
                     <div><FaShareAlt title='share'></FaShareAlt></div>
-                    <div><AiOutlineLike title='like'></AiOutlineLike></div>
+                    {/* <div><MdDelete title='like'></MdDelete></div> */}
 
                    </div>
                    <div className='author'>
-                    --tushar
+                    --{book}
                    </div>
                 </div>
                 <div className='card2-back'>
                     <div className='bold'>Description</div>
                     <div><FaDownload title='download'></FaDownload></div>
-                    <div className='description-area'>lore fg rt fdgf fdjk jkdfkhgjhdfjg jkfghkjdfhg fhghfjd hj </div>
+                    <div className='description-area'>{description} </div>
                 </div>
                 <div className='rotate-icon'>
                 <FaRotate  onClick={()=>(setRotate((curr)=>!curr))}> </FaRotate>

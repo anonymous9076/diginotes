@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Upload.css'
 import Navbar2 from '../Components/Navbar2'
 import Footer from '../Components/Footer'
+import axios from 'axios'
 
 function Upload() {
     const [obj, setObj] = useState({
@@ -12,13 +13,12 @@ function Upload() {
         pages: '',
         book: ''
     })
-    const [feildCheck,setFeildCheck]=useState(false);
+    const [fieldCheck,setFieldCheck]=useState(false);
 
-    const handleUpload = (e) => {
+    const handleUpload = async(e) => {
         e.preventDefault()
         if(obj.class && obj.subject && obj.pages && obj.file){
             console.log(obj)
-
             setObj({
                 class: '',
                 file: '',
@@ -27,11 +27,18 @@ function Upload() {
                 pages: '',
                 book: ''
             })
-            setFeildCheck(false)
+            try{
+                const res=await axios.post('http://localhost:8080/note/upload', {...obj,author:'user'})
+                console.log(res)
+            }
+            catch(error){
+                console.log(error)
+            }
+            setFieldCheck(false)
 
         }
         else{
-            setFeildCheck(true)
+            setFieldCheck(true)
         }
      
     }
@@ -59,7 +66,7 @@ function Upload() {
             <div className='upload'>
                 <div className='upload-sec'>
                     <div className='upload-file'>
-                        <div className={obj.file?'upload-area green':feildCheck?'upload-area red':'upload-area'}>
+                        <div className={obj.file?'upload-area green':fieldCheck?'upload-area red':'upload-area'}>
                             <input 
                             type='file'  
                             onChange={(e) => handleChange(e)} 
@@ -71,7 +78,6 @@ function Upload() {
                         <div className='upload-btn-area'>
                             <button className='upload-btn' onClick={(e) => handleUpload(e)}>Upload</button>
                         </div>
-
                     </div>
 
                     <div className='upload-detail'>
@@ -82,7 +88,7 @@ function Upload() {
                             name='class' 
                             value={obj.class} 
                             onChange={(e) => handleChange(e)} 
-                            className={obj.class?'input-sec-up green':feildCheck?'input-sec-up red':'input-sec-up'} 
+                            className={obj.class?'input-sec-up green':fieldCheck?'input-sec-up red':'input-sec-up'} 
                             placeholder='Enter Your Class'>
                             </input>
                         </span>
@@ -93,7 +99,7 @@ function Upload() {
                             name='subject'
                             value={obj.subject} 
                             onChange={(e) => handleChange(e)} 
-                            className={obj.subject?'input-sec-up green':feildCheck?'input-sec-up red':'input-sec-up'} 
+                            className={obj.subject?'input-sec-up green':fieldCheck?'input-sec-up red':'input-sec-up'} 
                             placeholder='Enter Your Subject'>
 
                             </input>
@@ -105,7 +111,7 @@ function Upload() {
                             name='pages' 
                             value={obj.pages} 
                             onChange={(e) => handleChange(e)} 
-                            className={obj.pages?'input-sec-up green':feildCheck?'input-sec-up red':'input-sec-up'} 
+                            className={obj.pages?'input-sec-up green':fieldCheck?'input-sec-up red':'input-sec-up'} 
                             placeholder='Enter Pages'></input>
                         </span>
                         <span className='input-data'>

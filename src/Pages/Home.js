@@ -8,7 +8,6 @@ function Home() {
     <>
       <Navbar></Navbar>
       <div className='home'>
-        <div className='blur'>
           <div className='home-sec1'>
             <span className='box-for-riseup'>
               <h1 className='sitename'>DIGINOTES</h1>
@@ -31,8 +30,11 @@ function Home() {
               </div>
             </span>
           </div>
+          <div className='home-img'>
+            <img  src='./images/home.png'></img>
+          </div>
+
         </div>
-      </div>
 
     </>
 

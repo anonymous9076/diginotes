@@ -1,7 +1,14 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .footer{
     height: 50dvh;
     width: 100%;
-    background: url(../images/10.png);
+    background: #0061ab;
     background-size: cover;
     background-position: right;
     color: aliceblue;
@@ -9,13 +16,17 @@
 .footer-blur{
     width:inherit;
     height: calc(50dvh - 20%);
-    background: rgba(0, 0, 0, 0.646);
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.341);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .footer-contact{
     height:100%;
     width: 35%;
+    display: -ms-grid;
     display: grid;
     place-items: center;
   
@@ -30,6 +41,8 @@
     height:2rem;
 }
 .footer-contact>span{
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
 
 }
@@ -37,17 +50,23 @@
 .footer-social{
     height:100%;
     width: 30%;
+    display: -ms-grid;
     display: grid;
     place-items:center;
 }
 #icon-body{
     width: 100%;
+    display: -ms-grid;
     display: grid;
     place-items:center;
 }
 .foot-icons-container{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr; 
 }
 .foot-icon{
@@ -55,12 +74,15 @@
     margin: 10px;
 }
 .foot-icon:hover{
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
 }
 
 .footer-list1{
     height:100%;
     width: calc((100% - 35% - 30%) / 2);
+    display: -ms-grid;
     display: grid;
     place-items: center;
 
@@ -80,13 +102,18 @@
 
 @media screen and (max-width:850px){
     .footer{
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         padding-bottom: 5%;
     }
     .footer-blur{
         width:inherit;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
 
     }
     .footer-contact{
@@ -96,6 +123,7 @@
     .footer-social{
         height:100%;
         width: 50%;
+        display: -ms-grid;
         display: grid;
         place-items:center;
     }
@@ -108,13 +136,18 @@
 }
 @media screen and (max-width:600px){
     .footer{
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         padding-bottom: 5%;
     }
     .footer-blur{
         width:inherit;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
     .footer-contact{
         height:100%;

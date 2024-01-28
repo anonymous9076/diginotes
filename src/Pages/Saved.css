@@ -1,15 +1,15 @@
 .saved {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
-    background: url('../images/1.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #003d6b6f;
     padding-top: 5rem;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 .s-head{
     width: 100%;
-    color: white;
+    color: #003C6B;
     text-align: center;
     padding: 0;
     padding-top: 2%;
@@ -18,9 +18,11 @@
 .items-container {
     width: 100%;
     padding: 3%;
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     place-items: center;
     box-sizing: border-box;
 }

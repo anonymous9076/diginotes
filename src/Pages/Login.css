@@ -1,32 +1,54 @@
 .login {
     height: 100dvh;
     width: 100%;
-    background: url(../images/13.png);
+    background-color: #CBC9EF;
     background-position: center;
+    display: -ms-grid;
     display: grid;
     place-items: center;
 }
 
 .login-cont {
 
+    display: -ms-grid;
+
     display: grid;
+    -ms-grid-rows: 15% 80%;
     grid-template-rows: 15% 80%;
     place-items: center;
-color: white;
+    color: #003C6B;
 }
 
 .login-page {
     height: 100%;
     width: 60%;
-    background-color: rgba(0, 0, 0, 0.611);
+    background-color: #003d6bae;
     border-radius: 20px;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-rows: 15% 15% 12% 10% 15% 15% 20%;
     grid-template-rows: 15% 15% 12% 10% 15% 15% 20%;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 4%;
-    box-sizing: border-box;
+    -webkit-box-shadow: 0px 0px 15px grey;
+            box-shadow: 0px 0px 15px grey;
+    position: relative;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
-#disabled{
+.login-page:before {
+    position: absolute;
+    height: 100%;
+    content: '';
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.574);
+    border-radius: 20px 100% 0 20px;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+}
+
+#disabled {
     display: none;
 }
 
@@ -34,15 +56,23 @@ color: white;
 
 .label {
     width: 30%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     font-size: clamp(15px, 5vw, 25px);
     font-weight: 500;
 }
 
 .input-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .input-sec {
@@ -60,30 +90,50 @@ color: white;
     margin: 0;
     padding: 0;
     color: rgb(195, 195, 195);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
     transition: all .5s;
 }
+
 .login-page>p:hover {
     font-size: 105%;
     color: white;
 }
-.goto-sign{
+
+.goto-sign {
     color: rgb(195, 195, 195);
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
     transition: all .5s;
 
 }
-.goto-sign:hover{
+
+.goto-sign:hover {
     font-size: 105%;
     color: white;
 }
+
 .login-btn {
     width: 100%;
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .logb {
@@ -95,10 +145,18 @@ color: white;
     border-radius: 10px;
     font-size: clamp(15px, 5vw, 20px);
     letter-spacing: 2px;
-}
+    -webkit-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
 
+}
+.log-submit:hover {
+    font-size: clamp(25px, 5vw, 30px);
+}
 .lb {
-    background: rgba(128, 128, 128, 0.418);
+    background: #003d6bae;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     padding: 0 4%;
     font-size: clamp(10px, 5vw, 15px);
@@ -108,43 +166,51 @@ color: white;
 @media screen and (max-width:800px) {
     .login {
         height: 35rem;
-        width: 100%;
-        background: url(../images/13.png);
-        background-position: center;
-        display: grid;
-        place-items: center;
+      
     }
-    #disabled{
+
+    #disabled {
         display: block;
     }
+
     .login-page {
+        -ms-grid-rows: 20% 20% 8% 8% 5% 12% 12% 15%;
         grid-template-rows: 20% 20% 8% 8% 5% 12% 12% 15%;
         width: 90%;
     }
 
     .login-btn {
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
 
     .logb {
         height: 90%;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
-        
+
     }
+
     .label {
         width: 50%;
         display: block;
         font-size: clamp(20px, 5vw, 25px);
     }
+
     .input-row {
         display: block;
         gap: 0;
     }
+
     .input-sec {
         display: block;
         width: 60%;
-        height:40% ;
+        height: 40%;
     }
+
     .lb {
-        background: rgba(128, 128, 128, 0.418);}
+        background: #003d6bae;
+    }
 }

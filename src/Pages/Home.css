@@ -1,12 +1,27 @@
 .home {
     height: 100vh;
     width: 100%;
-    background: url(../images/8.png);
+    background:#C0D0DA;
     position: relative;
-    background-position: right;
-    background-size: cover;
     overflow: hidden;
-    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 5rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.home-img{
+    height: 100%;
+    width: 50%;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+}
+.home-img>img{
+    height: 50%;
+    width: 80%;
+   
 }
 
 .box-for-riseup{
@@ -16,97 +31,131 @@
 }
 
 .home-sec1 {
-    width: 60%;
+    width: 50%;
     height: 100%;
+    display: -ms-grid;
     display: grid;
-    box-sizing: border-box;
-    grid-template-rows: 45% 15% 20%;
+    place-items: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    -ms-grid-rows: 45% 15% 30%;
+    grid-template-rows: 45% 15% 30%;
 }
 
 .sitename {
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    justify-content: center;
-    align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     margin: 0;
     padding: 0;
-    font-size: clamp(60px, 8vw, 90px);
+    font-size: clamp(50px, 8vw, 90px);
     color: transparent;
-    -webkit-text-stroke-color: rgb(255, 255, 255);
-    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #003C6B;
+    -webkit-text-stroke-width: 4px;
     letter-spacing: 3px;
     overflow-y: hidden;
     position: relative;
-    animation: riseup 1s ease-in 1;
+    -webkit-animation: riseup 1s ease-in 1;
+            animation: riseup 1s ease-in 1;
 }
 
 .slogan {
     margin: 0;
     width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     text-align: center;
-    color: white;
+    color: #003C6B;
     font-size: clamp(15px, 4vw, 25px);
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     overflow: hidden;
     position: relative;
-    animation: riseup 1.2s ease-in 1;
+    -webkit-animation: riseup 1.2s ease-in 1;
+            animation: riseup 1.2s ease-in 1;
 }
 
 .btns-area {
     height: 100%;
     width: 90%;
     margin: 0 auto;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 2% 1fr;
     grid-template-columns: 1fr 1fr;
     place-items: center;
     gap: 2%;
     position: relative;
     overflow: hidden;
-    animation: riseup 1.5s ease-in 1;
+    -webkit-animation: riseup 1.5s ease-in 1;
+            animation: riseup 1.5s ease-in 1;
 }
 
 .homepage-btns {
     width: 90%;
-    height: 50%;
-    border-radius: 20px;
+    height: 40%;
+    border-radius: 10px;
     background-color: transparent;
-    /* backdrop-filter: blur(5px); */
-    color: rgb(255, 255, 255);
+    color: #003C6B;
     font-weight: 600;
-    border: 4px solid whitesmoke;
+    border: 4px solid #003d6bac;
     font-size: larger;
     letter-spacing: 2px;
-    box-shadow: inset 0px 0px 15px rgb(200, 200, 200) ;
+    -webkit-box-shadow: inset 0px 0px 15px #003C6B;
+            box-shadow: inset 0px 0px 15px #003C6B;
+    -webkit-transition: -webkit-transform .5s linear;
+    transition: -webkit-transform .5s linear;
+    -o-transition: transform .5s linear;
     transition: transform .5s linear;
+    transition: transform .5s linear, -webkit-transform .5s linear;
 
 }
 .homepage-btns:hover {
-    color: white;
-    transform: scale(1.1);
+    color: #003C6B;
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
 }
 
 @media screen and (max-width:800px) {
+
+
     .home {
-        height: 100vh;
+        height: 35rem;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:reverse;
+            -ms-flex-direction:column-reverse ;
+                flex-direction:column-reverse ;
+    }
+    .home-img{
+        height: 40%;
         width: 100%;
-        background: url(../images/8.png);
-        position: relative;
-        background-position: right;
-        background-size: cover;
-        overflow: hidden;
-        background-repeat: no-repeat;
+    }
+    .home-img>img{
+        height: 80%;
     }
     .home-sec1 {
-        height: 100%;
+        height: 60%;
         width: 100%;
         padding: 2%;
     }
+  
     .btns-area {
         width: 94%;
         height: 100%;
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 1fr 2% 1fr;
         grid-template-columns: 1fr 1fr;
         place-items: center;
         gap: 2%;
@@ -115,9 +164,9 @@
         height: 80%;
     } 
 }
-@media screen and (max-width:500px) {
-    .homepage-btns {
-        height: 50%;
-    
+
+@media screen and (max-width:550px) {
+    .sitename{
+        place-items: center;
     }
 }
