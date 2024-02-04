@@ -16,7 +16,7 @@ const NotesContext = (props) => {
     const [state, dispatch] = useReducer(reducer, initialstate)
     const getAllNotes = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/note/alldata')
+            const res = await axios.get('https://digibackend.vercel.app/note/alldata')
             dispatch({ type: "ALL_NOTES", payload: res.data })
         }
         catch (error) {

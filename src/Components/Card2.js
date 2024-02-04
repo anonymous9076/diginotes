@@ -10,7 +10,7 @@ const Card2 = (props) => {
     const [copy, setCopy] = useState(false)
     const [rotate, setRotate] = useState(false);
     const { degree, pages, my_file, subject, author, description, deletebtn } = props
-    const url = `http://localhost:8080/${my_file}`
+    const url = `https://digibackend.vercel.app/${my_file}`
 
     const handlePreview = async () => {
         const atag = document.createElement('a')
