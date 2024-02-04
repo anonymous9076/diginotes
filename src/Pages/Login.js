@@ -1,36 +1,36 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Login.css'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+import { GetUserContext } from '../Context/UserContext'
+import { useNavigate } from 'react-router-dom';
+
 function Login() {
+    const {loginUser,userinfo} = useContext(GetUserContext)
+    const [valid, setValid] = useState(false)
+    const navigate = useNavigate();
     const [object, setObject] = useState({
         email: '',
         password: ''
     })
-    const [valid, setValid] = useState(false)
-
-    const handleclick = async (e) => {
-        if (object.email && object.password) {
-            console.log(object)
-            try {
-                const res = await axios.post('http://localhost:8080/user/login', object)
-                alert(res.data)
-            }
-            catch (error) {
-                alert("invalid username or password")
-            }
-
+ 
+    const handleSubmit=(e)=>{
+        e.stopPropagation()
+        e.preventDefault()
+        if(object.email && object.password){
             setValid(false)
-            setObject({
-                email: '',
-                password: ''
-            })
+            loginUser(object)
+            if(userinfo){
+                navigate('/dashboard')
+                setObject({
+                    email:null,
+                    password: null
+                });
+            }
         }
-        else {
+        else{
             setValid(true)
-
         }
-    }
+    } 
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -86,7 +86,7 @@ function Login() {
                     <span className='login-btn'>
                         <button
                             type='submit'
-                            onClick={(e) => handleclick(e)}
+                            onClick={(e)=>handleSubmit(e)}
                             className='logb log-submit'>
                             Submit
                         </button>

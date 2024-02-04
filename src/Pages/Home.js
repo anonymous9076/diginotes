@@ -31,7 +31,7 @@ function Home() {
             </span>
           </div>
           <div className='home-img'>
-            <img  src='./images/home.png'></img>
+            <img  src='./images/home.png' alt='...'></img>
           </div>
 
         </div>

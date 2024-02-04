@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import "./Navbar2.css";
 import { FiMenu } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
@@ -11,6 +11,8 @@ const Navbar = () => {
     const handleclose=(value)=>{
         setProfile(value)
     }
+   
+
     return (
         <>
             <div className={menu ? "nav2 active" : "nav2"}>
@@ -26,7 +28,7 @@ const Navbar = () => {
                         <li><Link className="link" to='/dashboard'>Dashboard</Link></li>
                         <li><Link className="link" to='/upload'>Upload</Link></li>
                         <li id='inside-logo'><div className="logo3"><h1>DGN</h1></div></li>
-                        <li><Link className="link" to='/saved'>Saved</Link></li>
+                        <li><Link className="link" to='/saved'>My-Uploads</Link></li>
                         <li>Troubleshoot</li>
                     </ul>
                     <hr className="line"></hr>

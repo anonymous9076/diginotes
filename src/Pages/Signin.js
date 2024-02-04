@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import './Signin.css'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
+import { GetUserContext } from '../Context/UserContext'
 
 function Signin() {
+    const {signinUser} =useContext(GetUserContext)
     const [valid,setValid]=useState(false)
     const[object,setObject]=useState({
         firstname:'',
@@ -16,16 +17,11 @@ function Signin() {
         password:''
     }) ;
 
-    const handleClick=async(e)=>{
+    const handleClick=(e)=>{
         if(object.dob&&object.firstname&&object.lastname&&object.institute&&object.qualification&&object.email&&object.password){
         e.preventDefault()
-            try{
-                await axios.post('http://localhost:8080/user/signin', object)
-            }
-            catch(error){
-
-            }
-
+        signinUser(object)
+       
         setObject({
             firstname:'',
             lastname:'',
@@ -37,12 +33,13 @@ function Signin() {
             password:''
         })
         setValid(false)
-
         }
         else{
             setValid(true)
         }
     }
+   
+
     const handleInput=(e)=>{
         const value=e.target.value
         const name=e.target.name

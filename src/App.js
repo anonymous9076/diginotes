@@ -5,12 +5,15 @@ import Login from './Pages/Login'
 import Dashboard from './Pages/Dashboard'
 import Upload from './Pages/Upload'
 import Saved from './Pages/Saved'
-import Notescontext from './Context/IndexContext';
+import NotesContext from './Context/NotesContext';
+import UserContext from './Context/UserContext';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <Notescontext>
+    <UserContext>
+    <NotesContext>
       <BrowserRouter>
 
         <Routes>
@@ -23,7 +26,8 @@ function App() {
 
         </Routes>
       </BrowserRouter>
-    </Notescontext> 
+    </NotesContext> 
+    </UserContext>
   )
 }
 
