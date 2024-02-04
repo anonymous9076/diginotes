@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import './Card2.css'
 import { FaDownload, FaCopy, FaEye } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -11,9 +11,8 @@ const Card2 = (props) => {
     const [rotate, setRotate] = useState(false);
     const { degree, pages, my_file, subject, author, description, deletebtn } = props
     const url = `http://localhost:8080/${my_file}`
-    
-    const handleDownload = async () => {
 
+    const handlePreview = async () => {
         const atag = document.createElement('a')
         atag.href = url
         atag.setAttribute('download', my_file)
@@ -44,9 +43,11 @@ const Card2 = (props) => {
 
                     </div>
                     <div className='card-icon'>
-                        <div><FaEye title='like'></FaEye></div>
+                        <div><FaEye
+                            onClick={handlePreview}
+                            title='like'>
+                        </FaEye></div>
                         <div><FaDownload
-                            onClick={handleDownload}
                             title='download'>
                         </FaDownload></div>
                         <CopyToClipboard text={url} onCopy={handleCopy}>
@@ -63,10 +64,10 @@ const Card2 = (props) => {
                 </div>
                 <div className='card2-back'>
                     <div className='bold'>Description</div>
-                {deletebtn?
-                <div><MdDelete title='like'></MdDelete></div>
-                :''}
-                   
+                    {deletebtn ?
+                        <div><MdDelete title='like'></MdDelete></div>
+                        : ''}
+
                     <div className='description-area'>{description} </div>
                 </div>
                 <div className='rotate-icon'>

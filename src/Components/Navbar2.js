@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import "./Navbar2.css";
 import { FiMenu } from "react-icons/fi";
 import { RxCross2 } from "react-icons/rx";
@@ -7,11 +7,13 @@ import Profile from './Profile';
 
 const Navbar = () => {
     const [menu, setMenu] = useState(false)
-    const [profile,setProfile]=useState(false)
-    const handleclose=(value)=>{
+    const [profile, setProfile] = useState(false)
+    const profileImg = localStorage.getItem('image')
+
+    const handleclose = (value) => {
         setProfile(value)
     }
-   
+
 
     return (
         <>
@@ -34,14 +36,26 @@ const Navbar = () => {
                     <hr className="line"></hr>
                 </div>
                 <div className="nav2-profile">
-                    <span className="nav-profile-img" onClick={()=>setProfile(true)}>
+                    <span className="nav-profile-img" onClick={() => setProfile(true)}>
+                        {profileImg ?
+                            <img
+                                className='user-img border'
+                                src={profileImg}
+                                alt='...'>
+                            </img>
+                            : <img
+                                className='user-img border'
+                                src='./images/home.png'
+                                alt='...'>
+                            </img>
+                        }
                     </span>
 
                 </div>
-                    <Profile 
+                <Profile
                     profile={profile}
                     handleclose={handleclose}
-                    ></Profile>
+                ></Profile>
             </div>
         </>
     );
