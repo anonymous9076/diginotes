@@ -34,13 +34,10 @@ const NotesContext = (props) => {
         }
     }
     const myUploadedNotes = async() => {
-        
-        console.log('1',userEmail)      
-        if(userEmail ){           
-        dispatch({ type: 'GET_MY_NOTES', payload: userEmail})
+                if(userEmail)
+        dispatch({ type: 'GET_MY_NOTES'})
 
-
-    }}
+    }
 
    
 

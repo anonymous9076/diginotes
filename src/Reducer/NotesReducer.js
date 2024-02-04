@@ -34,14 +34,10 @@ const reducer=(state,action)=>{
                  }
             }    
         case 'GET_MY_NOTES':
-            if(action.payload){
            const currentEmail = localStorage.getItem('email')
         return{
             ...state,
             myUploads :state.allnotes.filter((p)=> p.email == currentEmail)
-        }}
-        return{
-            ...state
         }
 
         default:

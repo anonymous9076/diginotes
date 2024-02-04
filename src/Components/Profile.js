@@ -13,7 +13,6 @@ function Profile(props) {
   const navigate = useNavigate()
 
   const handleLogout=()=>{
-    localStorage.clear()
     navigate('/Login')
   }
 

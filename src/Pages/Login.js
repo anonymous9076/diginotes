@@ -1,36 +1,45 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Login.css'
 import { Link } from 'react-router-dom'
 import { GetUserContext } from '../Context/UserContext'
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-    const {loginUser,userinfo} = useContext(GetUserContext)
+    const {loginUser,authorized} = useContext(GetUserContext)
     const [valid, setValid] = useState(false)
+    const loginEmail = localStorage.getItem('email')
     const navigate = useNavigate();
     const [object, setObject] = useState({
         email: '',
         password: ''
     })
  
-    const handleSubmit=(e)=>{
+    const handleSubmit=async(e)=>{
         e.stopPropagation()
         e.preventDefault()
         if(object.email && object.password){
             setValid(false)
-            loginUser(object)
-            if(userinfo){
-                navigate('/dashboard')
-                setObject({
-                    email:null,
-                    password: null
-                });
-            }
+            await loginUser(object)
+
+            setObject({
+                email:null,
+                password: null
+            });
         }
         else{
             setValid(true)
+            setObject({
+                email:null,
+                password: null
+            });
         }
     } 
+    useEffect(()=>{
+        if(authorized)
+      navigate('/dashboard')
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[authorized])
+
 
     const handleChange = (e) => {
         const name = e.target.name;

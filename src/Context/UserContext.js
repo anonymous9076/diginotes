@@ -22,11 +22,14 @@ function UserContext(props) {
         try {
             const res = await axios.post('http://localhost:8080/user/login', object)
             const userinfo = res.data
-            dispatch({
-                type:'LOGIN_USER',
-                payload:userinfo
-            })
+            const status = res.status
+            if(status == 200){
+                dispatch({
+                    type:'LOGIN_USER',
+                    payload:userinfo
+                })
             alert('Login successfully')
+        }
         }
         catch (error) {
             alert("invalid username or password")
