@@ -13,20 +13,20 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function App() {
   return (
     <UserContext>
-    <NotesContext>
-      <BrowserRouter>
+      <NotesContext>
+        <BrowserRouter>
 
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/Login' element={<Login />} />
-          <Route path='/Signin' element={<Signin />} />
-          <Route path='/Dashboard' element={<Dashboard />}></Route>
-          <Route path='/Upload' element={<Upload />} />
-          <Route path='/Saved' element={<Saved />} />
-
-        </Routes>
-      </BrowserRouter>
-    </NotesContext> 
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/Login' element={<Login />} />
+            <Route path='/Signin' element={<Signin />} />
+            <Route path='/Dashboard' element={<Dashboard />}></Route>
+            <Route path='/Upload' element={<Upload />} />
+            <Route path='/Saved' element={<Saved />} />
+            
+          </Routes>
+        </BrowserRouter>
+      </NotesContext>
     </UserContext>
   )
 }

@@ -11,7 +11,7 @@ function Profile(props) {
   const firstname = localStorage.getItem('firstname')
   const lastname = localStorage.getItem('lastname')
   const email = localStorage.getItem('email')
-  const profileImg = localStorage.getItem('image')
+  const profileImg = localStorage.getItem('img')
   const navigate = useNavigate()
 
 
@@ -27,9 +27,9 @@ function Profile(props) {
     formdata.append('email', email)
 
     try {
-      const res = await axios.post('https://digibackend.vercel.app/user/uploadImg', formdata)
-      const imgurl = `https://digibackend.vercel.app/${res.data}`
-      localStorage.setItem('image', imgurl)
+      const res = await axios.post('http://localhost:8080/user/uploadImg', formdata)
+      const imgurl = `http://localhost:8080/${res.data}`
+      localStorage.setItem('img', imgurl)
       alert('successfully updated image')
     }
     catch (err) {
@@ -37,8 +37,6 @@ function Profile(props) {
     }
 
   }
-
-  console.log(profile)
   return (
     <div className={profile ? 'profile profile-show' : 'profile'}>
       <span className='back'> <TiArrowForward onClick={() => handleclose(false)}></TiArrowForward></span>

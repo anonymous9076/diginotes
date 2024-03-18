@@ -5,6 +5,33 @@ import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
   const [menu,setMenu]=useState(false)
+  const scrollToTop = (e) => {
+    if(e===1)
+    window.scrollTo({
+      top: 0, // Scroll to 100vh from the top
+      behavior: 'smooth'
+    })
+    if(e===2)
+    window.scrollTo({
+      top: window.innerHeight, // Scroll to 100vh from the top
+      behavior: 'smooth'
+    })
+    if(e===3)
+    window.scrollTo({
+      top:2* window.innerHeight, // Scroll to 100vh from the top
+      behavior: 'smooth'
+    })
+    if(e===4)
+    window.scrollTo({
+      top: 3*window.innerHeight, // Scroll to 100vh from the top
+      behavior: 'smooth'
+    })
+    if(e===5)
+    window.scrollTo({
+      top: 4*window.innerHeight, // Scroll to 100vh from the top
+      behavior: 'smooth'
+    })
+    ;}
   return (
     <>
       <div className={menu?"nav active" : "nav"}>
@@ -17,11 +44,12 @@ const Navbar = () => {
         </div>
 
         <ul className="nav-item-list"  >
-          <li>Home</li>
-          <li>About</li>
-          <li>Career</li>
-          <li>Motive</li>
-          <li>Contact</li>
+          <li onClick={()=>scrollToTop(1)}>Home</li>
+          <li onClick={()=>scrollToTop(2)}>Career</li>
+          <li onClick={()=>scrollToTop(3)}>About</li>
+          <li onClick={()=>scrollToTop(4)}>Contact</li>
+          <li onClick={()=>scrollToTop(5)}>Motive</li>
+         
         </ul>
       </div>
     </>

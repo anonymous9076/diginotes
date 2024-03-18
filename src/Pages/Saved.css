@@ -1,5 +1,6 @@
 .saved {
     height: -webkit-fit-content;
+    min-height: 100dvh;
     height: -moz-fit-content;
     height: fit-content;
     background-color: #003d6b6f;

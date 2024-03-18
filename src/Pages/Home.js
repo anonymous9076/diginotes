@@ -2,7 +2,10 @@ import React from 'react'
 import './Home.css'
 import { Link } from 'react-router-dom'
 import Navbar from '../Components/Navbar';
-
+import About from '../Components/About';
+import Motive from'../Components/Motive';
+import Career from '../Components/Career';
+import Contact from '../Components/Contact';
 function Home() {
   return (
     <>
@@ -35,7 +38,10 @@ function Home() {
           </div>
 
         </div>
-
+        <Career></Career>
+      <About></About>
+      <Contact></Contact>
+      <Motive></Motive>
     </>
 
   )

@@ -3,43 +3,53 @@ import './Login.css'
 import { Link } from 'react-router-dom'
 import { GetUserContext } from '../Context/UserContext'
 import { useNavigate } from 'react-router-dom';
+import Loading from '../Components/Loading'
 
 function Login() {
-    const {loginUser,authorized} = useContext(GetUserContext)
+    const { loginUser, authorized, load } = useContext(GetUserContext)
     const [valid, setValid] = useState(false)
-    const loginEmail = localStorage.getItem('email')
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate();
     const [object, setObject] = useState({
         email: '',
         password: ''
     })
- 
-    const handleSubmit=async(e)=>{
+
+    const handleSubmit = async (e) => {
         e.stopPropagation()
         e.preventDefault()
-        if(object.email && object.password){
+        setLoading(true)
+
+        //if every thing write correctly 
+        if (object.email && object.password) {
             setValid(false)
-            await loginUser(object)
-
+            loginUser(object)
             setObject({
-                email:null,
-                password: null
-            });
+                email: '',
+                password: ''
+            })
         }
-        else{
+
+        //if every thing does'nt write correctly 
+        else {
             setValid(true)
+            setLoading(false)
             setObject({
-                email:null,
-                password: null
-            });
+                email: '',
+                password: ''
+            })
         }
-    } 
-    useEffect(()=>{
-        if(authorized)
-      navigate('/dashboard')
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[authorized])
+    }
+    useEffect(() => {
+        setLoading(load)
+    }, [load])
 
+    useEffect(() => {
+        if (authorized) {
+            navigate('/dashboard')
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [authorized])
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -52,6 +62,10 @@ function Login() {
 
     return (
         <div className='login'>
+            {loading ?
+                <Loading>
+                </Loading> : ''
+            }
             <div className='login-cont blur'>
                 <h1>Let's !  Get Started</h1>
                 <div className='login-page'>
@@ -60,7 +74,7 @@ function Login() {
                         <input
                             type='email'
                             className={object.email ? 'input-sec' : valid ? 'input-sec red' : 'input-sec'}
-                            value={Object.email}
+                            value={object.email}
                             name='email'
                             onChange={(e) => handleChange(e)}
                             placeholder='Enter Your Email'></input>
@@ -70,7 +84,7 @@ function Login() {
                         <input
                             type='password'
                             className={object.password ? 'input-sec' : valid ? 'input-sec red' : 'input-sec'}
-                            value={Object.password}
+                            value={object.password}
                             name='password'
                             onChange={(e) => handleChange(e)}
                             placeholder='Enter Your Password'></input>
@@ -95,7 +109,7 @@ function Login() {
                     <span className='login-btn'>
                         <button
                             type='submit'
-                            onClick={(e)=>handleSubmit(e)}
+                            onClick={(e) => handleSubmit(e)}
                             className='logb log-submit'>
                             Submit
                         </button>

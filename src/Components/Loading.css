@@ -1,0 +1,17 @@
+.loading{
+    height:100dvh;
+    width: 100%;
+    position: fixed;
+    background-color: #003d6bd6;
+    top: 0;
+    left: 0;
+    overflow: -moz-hidden-unscrollable;
+    z-index: 999;
+    display: grid;
+    place-items: center;
+}
+.icon{
+    height: 50px;
+    width: 50px;
+   
+}

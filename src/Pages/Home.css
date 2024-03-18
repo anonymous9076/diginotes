@@ -7,9 +7,9 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding-top: 5rem;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    
 }
 .home-img{
     height: 100%;
@@ -114,15 +114,13 @@
     -webkit-transition: -webkit-transform .5s linear;
     transition: -webkit-transform .5s linear;
     -o-transition: transform .5s linear;
-    transition: transform .5s linear;
-    transition: transform .5s linear, -webkit-transform .5s linear;
+    transition: all .5s linear;
+    transition: all .5s linear, -webkit-transform .5s linear;
 
 }
 .homepage-btns:hover {
     color: #003C6B;
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+    font-size:1.5rem ;
 }
 
 @media screen and (max-width:800px) {

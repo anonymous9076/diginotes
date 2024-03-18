@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Upload.css'
 import Navbar2 from '../Components/Navbar2'
 import Footer from '../Components/Footer'
-
+import Loading from '../Components/Loading'
 import axios from 'axios'
 
 function Upload() {
@@ -18,6 +18,8 @@ function Upload() {
         book: ''
     })
     const [fieldCheck, setFieldCheck] = useState(false);
+    const [loading, setLoading] = useState(false)
+
 
     const handleUpload = async (e) => {
         e.preventDefault()
@@ -33,14 +35,17 @@ function Upload() {
 
         if (obj.class && obj.subject && obj.pages && obj.my_file) {
             setFieldCheck(false)
-
+            setLoading(true)
             try {
-                const res = await axios.post('https://digibackend.vercel.app/note/uploadNotes',
+                const res = await axios.post('http://localhost:8080/note/uploadNotes',
                     formdata)
                 alert(res.data.msg)
+                setLoading(false)
             }
             catch (error) {
                 alert(error)
+                setLoading(false)
+
             }
 
             setObj({
@@ -54,6 +59,8 @@ function Upload() {
         }
         else {
             setFieldCheck(true)
+            setLoading(false)
+
         }
 
     }
@@ -78,6 +85,7 @@ function Upload() {
     return (
         <>
             <Navbar2></Navbar2>
+            {loading?<Loading></Loading>:''}
             <div className='upload'>
                 <div className='upload-sec'>
                     <div className='upload-file' >

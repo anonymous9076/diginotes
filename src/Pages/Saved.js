@@ -3,6 +3,7 @@ import './Saved.css'
 import Card2 from '../Components/Card2'
 import Navbar2 from '../Components/Navbar2'
 import Footer from '../Components/Footer'
+import Loading from '../Components/Loading'
 import { GetDataContext } from '../Context/NotesContext'
 function Saved() {
 
@@ -15,6 +16,7 @@ function Saved() {
     return (
         <>
             <Navbar2></Navbar2>
+            {!myUploads?<Loading></Loading>:''}
             <div className='saved'>
                 <div className='upload-body'>
                     <h1 className='s-head'>My Uploaded Files</h1>
