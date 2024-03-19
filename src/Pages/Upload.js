@@ -37,7 +37,7 @@ function Upload() {
             setFieldCheck(false)
             setLoading(true)
             try {
-                const res = await axios.post('http://localhost:8080/note/uploadNotes',
+                const res = await axios.post('http://digibackend.vercel.app/note/uploadNotes',
                     formdata)
                 alert(res.data.msg)
                 setLoading(false)
