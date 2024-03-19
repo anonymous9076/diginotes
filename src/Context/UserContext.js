@@ -22,7 +22,7 @@ function UserContext(props) {
     const loginUser = async(object) =>{
 
         try {
-            const res = await axios.post('http://localhost:8080/user/login', object);
+            const res = await axios.post('http://digibackend.vercel.app/user/login', object);
             const userinfo = res.data;
             console.log(userinfo)
             const status = res.status;
@@ -56,7 +56,7 @@ function UserContext(props) {
 
     const signinUser = async(object)=>{
         try{
-            const res=await axios.post('http://localhost:8080/user/signin', object)
+            const res=await axios.post('http://digibackend.vercel.app/user/signin', object)
             dispatch({
                 type:'SIGNIN_USER',
                 payload:res.data.status
