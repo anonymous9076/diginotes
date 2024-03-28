@@ -27,8 +27,8 @@ function Profile(props) {
     formdata.append('email', email)
 
     try {
-      const res = await axios.post('http:digibackend.vercel.app/user/uploadImg', formdata)
-      const imgurl = `http://localhost:8080/${res.data}`
+      const res = await axios.post('http://digibackend.vercel.app/user/uploadImg', formdata)
+      const imgurl = `http://digibackend.vercel.app/${res.data}`
       localStorage.setItem('img', imgurl)
       alert('successfully updated image')
     }
